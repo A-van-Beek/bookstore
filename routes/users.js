@@ -2,6 +2,7 @@ import { Router } from "express";
 import notFoundErrorHandler from "../middleware/notFoundErrorHandler.js";
 import getUserOrders from "../services/users/getUserOrders.js";
 import getOrders from "../services/users/getOrders.js";
+import getOrderById from "../services/users/getOrderById.js";
 
 const router = Router();
 

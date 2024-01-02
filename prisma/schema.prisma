@@ -14,7 +14,7 @@ model User {
   id       String  @id @default(uuid())
   username String  @unique
   password String
-  Orders    Order[]
+  orders    Order[]
 }
 
 model Book {
@@ -25,7 +25,7 @@ model Book {
   pages     Int
   available Boolean
   genre     String
-  Orders     Order[]
+  orders     Order[]
 }
 
 model Order {
