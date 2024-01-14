@@ -6,8 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url      = "postgresql://postgres:postgres@localhost:3000/Bookstore"
 }
 
 model User {
@@ -43,8 +43,6 @@ orders Order[]
 model Order {
   id String @id @default(uuid())
 
-  order_type ItemType
-
   // Relations by id
   book_id String?
   record_id String?
@@ -65,8 +63,4 @@ model Order {
   @@index([book_id])
   @@index([user_id])
   @@index([record_id])
-}
-enum ItemType {
-  BOOK
-  RECORD
 }
