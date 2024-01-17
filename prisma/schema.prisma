@@ -6,8 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = "postgresql://postgres:postgres@localhost:3000/Bookstore"
+  provider = "mysql"
+  url      = "mysql://mySQL:mysql@localhost:3300/Bookstore"
 }
 
 model User {
