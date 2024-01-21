@@ -1,5 +1,6 @@
 import express from "express";
 import booksRouter from "./routes/books.js";
+import recordsRouter from "./routes/records.js";
 import loginRouter from "./routes/login.js";
 import userRouter from "./routes/users.js";
 import log from "./middleware/logMiddleware.js";
@@ -37,11 +38,12 @@ app.use(express.json());
 app.use(log);
 
 app.use("/books", booksRouter);
+app.use("/records", recordsRouter);
 app.use("/login", loginRouter);
 app.use("/users", userRouter);
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Welkom in mijn boekwinkel !");
 });
 
 // The error handler must be before any other error middleware and after all controllers

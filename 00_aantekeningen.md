@@ -10,3 +10,7 @@ starten met:
 
 na wijzigingen schema db: opnieuw database maken/vullen en applicatie starten:
 -> npx prisma db push --force-reset && npx prisma db seed && npm run dev
+
+verder migreren met: npx prisma migrate reset --skip-seed
+tabellen maken na migratie: npx prisma migrate dev --name init
+tabellen vullen: npx prisma db seed

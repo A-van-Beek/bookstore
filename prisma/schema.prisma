@@ -8,6 +8,7 @@ generator client {
 datasource db {
   provider = "mysql"
   url      = "mysql://mySQL:mysql@localhost:3300/Bookstore"
+  // hier evt. de schaduw DB
 }
 
 model User {
@@ -25,6 +26,7 @@ model Book {
   pages     Int
   available Boolean
   genre     String
+
   orders     Order[]
 }
 
@@ -42,6 +44,8 @@ orders Order[]
 
 model Order {
   id String @id @default(uuid())
+
+  order_type ItemType
 
   // Relations by id
   book_id String?
@@ -61,6 +65,10 @@ model Order {
 
   // recommended indexes
   @@index([book_id])
-  @@index([user_id])
   @@index([record_id])
+  @@index([user_id])
+}
+enum ItemType {
+  BOOK
+  RECORD
 }
